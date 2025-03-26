@@ -19,16 +19,16 @@ cd elle-est-la-api-rest
 cp .env.example .env
 ```
 
-### 3. Lancer Sail (en arrière-plan)
+### 2. Installer les dépendances
+
+```bash
+Composer install
+```
+
+### 4. Lancer Sail (en arrière-plan)
 
 ```bash
 ./vendor/bin/sail up -d
-```
-
-### 4. Installer les dépendances
-
-```bash
-./vendor/bin/sail composer install
 ```
 
 ### 5. Générer la clé d'application
