@@ -1,0 +1,182 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API Commandes",
+        "description": "Documentation de l'API REST des commandes",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/commandes": {
+            "get": {
+                "tags": [
+                    "Commandes"
+                ],
+                "summary": "Liste toutes les commandes",
+                "operationId": "6a11b062792d6b0aed3816592a638d6c",
+                "responses": {
+                    "200": {
+                        "description": "Liste des commandes récupérée avec succès"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Commandes"
+                ],
+                "summary": "Créer une nouvelle commande",
+                "operationId": "a4d695163e79084fc1ca65e77e325909",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "total",
+                                    "status"
+                                ],
+                                "properties": {
+                                    "total": {
+                                        "type": "number",
+                                        "format": "float",
+                                        "example": 99.99
+                                    },
+                                    "status": {
+                                        "type": "string",
+                                        "example": "en attente"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Commande créée"
+                    }
+                }
+            }
+        },
+        "/api/commandes/{id}": {
+            "get": {
+                "tags": [
+                    "Commandes"
+                ],
+                "summary": "Récupère une commande par son ID",
+                "operationId": "700d31135d2d0bcc8efcda92ca45ae8a",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID de la commande",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid",
+                            "example": "6d4acb24-e4e4-33bd-a667-677794a653af"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Commande trouvée"
+                    },
+                    "404": {
+                        "description": "Commande non trouvée"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Commandes"
+                ],
+                "summary": "Met à jour une commande existante",
+                "operationId": "30c20e1bcb3a10661b343e8074916075",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID de la commande à mettre à jour",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid",
+                            "example": "6d4acb24-e4e4-33bd-a667-677794a653af"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "total",
+                                    "status",
+                                    "date_commande"
+                                ],
+                                "properties": {
+                                    "total": {
+                                        "type": "number",
+                                        "format": "float",
+                                        "example": 129.99
+                                    },
+                                    "status": {
+                                        "type": "string",
+                                        "example": "Expédiée"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Commande mise à jour avec succès"
+                    },
+                    "422": {
+                        "description": "Données invalides"
+                    },
+                    "404": {
+                        "description": "Commande non trouvée"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Commandes"
+                ],
+                "summary": "Supprime une commande",
+                "operationId": "c9022bad4403150c0e68ebfbfb507a69",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID de la commande à supprimer",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid",
+                            "example": "6d4acb24-e4e4-33bd-a667-677794a653af"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Commande supprimée avec succès"
+                    },
+                    "404": {
+                        "description": "Commande non trouvée"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Commandes",
+            "description": "Commandes"
+        }
+    ]
+}

@@ -75,7 +75,7 @@ class CommandeController extends Controller
      *         in="path",
      *         description="ID de la commande",
      *         required=true,
-     *         @OA\Schema(type="uuid", example="6d4acb24-e4e4-33bd-a667-677794a653af")
+     *         @OA\Schema(type="string", format="uuid", example="6d4acb24-e4e4-33bd-a667-677794a653af")
      *     ),
      *     @OA\Response(
      *         response=200,
@@ -108,7 +108,7 @@ class CommandeController extends Controller
      *          in="path",
      *          description="ID de la commande à mettre à jour",
      *          required=true,
-     *          @OA\Schema(type="uuid", example="6d4acb24-e4e4-33bd-a667-677794a653af")
+     *          @OA\Schema(type="string", format="uuid", example="6d4acb24-e4e4-33bd-a667-677794a653af")
      *      ),
      *      @OA\RequestBody(
      *          required=true,
@@ -156,7 +156,7 @@ class CommandeController extends Controller
      *          in="path",
      *          description="ID de la commande à supprimer",
      *          required=true,
-     *          @OA\Schema(type="uuid", example="6d4acb24-e4e4-33bd-a667-677794a653af")
+     *          @OA\Schema(type="string", format="uuid", example="6d4acb24-e4e4-33bd-a667-677794a653af")
      *      ),
      *      @OA\Response(
      *          response=200,
