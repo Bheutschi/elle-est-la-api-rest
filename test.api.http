@@ -1,0 +1,25 @@
+GET http://localhost/api/commandes
+
+###
+
+GET http://localhost/api/commandes/6d4acb24-e4e4-33bd-a667-677794a653af
+
+###
+
+POST http://localhost/api/commandes
+Content-Type: application/json
+
+{
+    "total": 123.45,
+    "status": "En attente"
+}
+
+###
+
+PUT http://localhost/api/commandes/392486af-6582-3611-ad2d-53ebf98726a4
+Content-Type: application/json
+
+{
+    "total": 99.99,
+    "status": "Expédiée"
+}
