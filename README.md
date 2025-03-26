@@ -22,7 +22,7 @@ cp .env.example .env
 ### 2. Installer les dépendances
 
 ```bash
-Composer install
+composer install
 ```
 
 ### 4. Lancer Sail (en arrière-plan)
