@@ -16,5 +16,10 @@ class DatabaseSeeder extends Seeder
     {
         User::factory(10)->create();
         Commande::factory(10)->create();
+        Commande::create([
+            'id' => '6d4acb24-e4e4-33bd-a667-677794a653af',
+            'total' => 49.99,
+            'status' => 'En attente'
+        ]);
     }
 }

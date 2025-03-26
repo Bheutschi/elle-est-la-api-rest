@@ -1,6 +1,22 @@
-# API Commandes - Laravel 12 + Sail
+# API Commandes - Laravel 12
 
-Ce projet est une API REST construite avec Laravel 12, utilisant Laravel Sail pour l'environnement de développement.
+Ce projet est une API REST construite avec Laravel 12, dans le cadre du module i321 - Programmer des systèmes distribués.
+
+Il a été fait par Keanu De Coster et Bryan Heutschi.
+
+---
+
+## 📢 Disclaimer
+
+Nous avons bien générer une migration pour la table **commandes_produits**, mais comme il n'y a pas de table produits, nous pouvons pas la remplir.
+
+---
+
+## 🧰 Prérequis
+
+- PHP ≥ 8.2
+- [Composer](https://getcomposer.org/) (obligatoire pour installer les dépendances)
+- Docker (Laravel Sail fonctionne avec Docker)
 
 ---
 
@@ -19,7 +35,7 @@ cd elle-est-la-api-rest
 cp .env.example .env
 ```
 
-### 2. Installer les dépendances
+### 3. Installer les dépendances
 
 ```bash
 composer install
@@ -67,6 +83,8 @@ Une fois le projet lancé, la documentation est disponible ici :
 http://localhost/api/documentation
 ```
 
+Pour éviter d'aller dans la db pour copier coller un id nous avons mis un seeder qui génère une commande avec cette id : **6d4acb24-e4e4-33bd-a667-677794a653af**
+
 Pour regénérer la documentation après modifications :
 ```bash
 ./vendor/bin/sail artisan l5-swagger:generate
@@ -76,8 +94,13 @@ Pour regénérer la documentation après modifications :
 
 ## 🧪 Tester les routes
 
-Utilise un outil comme Postman ou Thunder Client, ou passe directement par Swagger UI.
+Vous pouvez tester les routes de l'API avec un client HTTP comme Postman ou Insomnia.
 
+Si vous voulez lister les routes disponibles, vous pouvez utiliser la commande suivante :
+
+```bash
+./vendor/bin/sail artisan route:list
+```
 ---
 
 ## 📦 Stack utilisée
